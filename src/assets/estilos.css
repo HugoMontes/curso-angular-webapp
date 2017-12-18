@@ -57,3 +57,7 @@
   margin-top: 30px;
   border-radius: 12px;
 }
+.activado{
+  text-decoration: none !important;
+  border-bottom: 4px solid yellow !important;
+}
