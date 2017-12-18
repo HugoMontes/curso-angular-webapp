@@ -14,6 +14,8 @@ export class ProductoService{
     this.url=GLOBAL.url;
   }
   getProductos(){
-    return 'Respuesta desde ProductoService';
+    // return 'Respuesta desde ProductoService';
+    // Realizar la peticion al servicio REST para obtener los productos
+    return this._http.get(this.url+'producto').map(res => res.json());
   }
 }

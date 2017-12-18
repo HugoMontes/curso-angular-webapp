@@ -1,2 +1,23 @@
 <h2>{{ titulo }}</h2>
 <hr/>
+<div *ngIf="!productos">
+  Cargando listado de productos...
+</div>
+<table *ngIf="productos" class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>DESCRIPCION</th>
+      <th>PRECIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos">
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.precio }}</td>
+    </tr>
+  </tbody>
+</table>
