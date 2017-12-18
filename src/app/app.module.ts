@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home.component';
 // Importar ErrorComponent
 import { ErrorComponent } from './components/error.component';
+// Importar ProductoListComponent
+import { ProductoListComponent } from './components/producto-list.component';
 
 // Rutas
 import { routing, appRoutingProviders } from './app.routing';
@@ -18,8 +20,10 @@ import { routing, appRoutingProviders } from './app.routing';
     AppComponent,
     // Cargar HomeComponent
     HomeComponent,
-    // Cargar HomeComponent
-    ErrorComponent
+    // Cargar ErrorComponent
+    ErrorComponent,
+    // Cargar ProdutoListComponent
+    ProductoListComponent
   ],
   imports: [
     BrowserModule,

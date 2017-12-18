@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 // Importar Componentes
 import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
+import { ProductoListComponent } from './components/producto-list.component';
 
 // Definir las rutas
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'producto', component: ProductoListComponent},
   {path: '**', component: ErrorComponent}
 ];
 // Cargar los servicios necesarios del router para que todas las rutas funcionen
