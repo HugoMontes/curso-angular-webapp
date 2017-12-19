@@ -11,7 +11,8 @@ import { HomeComponent } from './components/home.component';
 import { ErrorComponent } from './components/error.component';
 // Importar ProductoListComponent
 import { ProductoListComponent } from './components/producto-list.component';
-
+// Importar ProductoAddComponent
+import { ProductoAddComponent } from './components/producto-add.component';
 // Rutas
 import { routing, appRoutingProviders } from './app.routing';
 
@@ -23,7 +24,9 @@ import { routing, appRoutingProviders } from './app.routing';
     // Cargar ErrorComponent
     ErrorComponent,
     // Cargar ProdutoListComponent
-    ProductoListComponent
+    ProductoListComponent,
+    // Cargar ProdutoAddComponent
+    ProductoAddComponent
   ],
   imports: [
     BrowserModule,
