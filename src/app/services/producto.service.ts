@@ -18,4 +18,13 @@ export class ProductoService{
     // Realizar la peticion al servicio REST para obtener los productos
     return this._http.get(this.url+'producto').map(res => res.json());
   }
+  // Crear metodo para guardar un producto
+  addProducto(producto: Producto){
+    // Convertir a un string de json
+    let json = JSON.stringify(producto);
+    let params = 'json='+json;
+    let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+    // Enviar los datos por post(URL, JSON, HEADERS)
+    return this._http.post(this.url+'producto',params,{headers:headers}).map(res=>res.json());
+  }
 }

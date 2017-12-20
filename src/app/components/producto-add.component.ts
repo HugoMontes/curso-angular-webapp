@@ -15,6 +15,8 @@ import { Producto } from '../models/producto';
 export class ProductoAddComponent{
 
   public titulo:string;
+  // Definir un atributo de tipo producto
+  public producto:Producto;
 
   constructor(
     private _route:ActivatedRoute,
@@ -23,8 +25,29 @@ export class ProductoAddComponent{
     private _productoService:ProductoService
   ){
     this.titulo='Nuevo Productos';
+    // Instanciar un objeto producto
+    this.producto=new Producto(0,'','',0,'');
   }
   ngOnInit(){
     console.log('Se ha cargado el componente producto-add.component.ts');
+  }
+  onSubmit(){
+    // Mostrar datos del formulario por consola
+    console.log(this.producto);
+    // Guardar haciendo uso del servicio
+    this._productoService.addProducto(this.producto).subscribe(
+      response => {
+        if(response.code==200){
+          // En caso que no exista error redireccionar a producto
+          this._router.navigate(['/producto']);
+        }else{
+          // En caso de error mostrar el response
+          console.log(response);
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 }
